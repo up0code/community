@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Card - Community Subscription</title>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Karla', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #E5EFF5;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 635px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 81, 171, 0.15);
+        }
+        
+        /* Top Section */
+        .community-section {
+            background-color: #FFFFFF;
+            padding: 40px;
+        }
+        
+        .community-section h1 {
+            color: #2AB2AF;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        
+        .community-section h2 {
+            color: #C0DF34;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .community-section p {
+            color: #98A6BD;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Bottom Section */
+        .bottom-section {
+            display: flex;
+            color: white;
+        }
+        
+        /* Left - Subscription */
+        .subscription-section {
+            background-color: #2AB2AF;
+            padding: 40px;
+            flex: 1;
+        }
+        
+        .subscription-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            margin-right: 12px;
+        }
+        
+        .period {
+            opacity: 0.7;
+        }
+        
+        .access {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .signup-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #C0DF34;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        
+        .signup-btn:hover {
+            background-color: #a9c42d;
+        }
+        
+        /* Right - Why Us */
+        .why-us-section {
+            background-color: #4ABEBD;
+            padding: 40px;
+            flex: 1;
+        }
+        
+        .why-us-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        
+        .why-us-list {
+            list-style-type: none;
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        .why-us-list li {
+            margin-bottom: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 650px) {
+            .bottom-section {
+                flex-direction: column;
+            }
+            
+            .community-section, 
+            .subscription-section, 
+            .why-us-section {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Section -->
+        <section class="community-section">
+            <h1>Join our community</h1>
+            <h2>30-day, hassle-free money back guarantee</h2>
+            <p>Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honing their skills.</p>
+        </section>
+        
+        <!-- Bottom Section -->
+        <section class="bottom-section">
+            <!-- Left: Subscription -->
+            <div class="subscription-section">
+                <h3>Monthly Subscription</h3>
+                <div class="price-container">
+                    <span class="price">$29</span>
+                    <span class="period">per month</span>
+                </div>
+                <p class="access">Full access for less than $1 a day</p>
+                <a href="#" class="signup-btn">Sign Up</a>
+            </div>
+            
+            <!-- Right: Why Us -->
+            <div class="why-us-section">
+                <h3>Why Us</h3>
+                <ul class="why-us-list">
+                    <li>Tutorials by industry experts</li>
+                    <li>Peer & expert code review</li>
+                    <li>Coding exercises</li>
+                    <li>Access to our GitHub repos</li>
+                    <li>Community forum</li>
+                    <li>Flashcard decks</li>
+                    <li>New videos every week</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const signupBtn = document.querySelector('.signup-btn');
+        
+        signupBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const originalText = this.textContent;
+            this.textContent = 'Processing...';
+            this.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                this.textContent = 'Signed Up Successfully!';
+                this.style.backgroundColor = '#2AB2AF';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.backgroundColor = '#C0DF34';
+                    this.style.opacity = '1';
+                }, 1500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
